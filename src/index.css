@@ -12,8 +12,17 @@
 }
 
 @layer components {
+
   .flex-center {
       @apply flex justify-center items-center;
+  }
+
+  .input {
+    @apply p-2 rounded-md border border-gray-300 text-xl w-full my-2 text-dark;
+  }
+
+  .btn {
+    @apply p-2 rounded-md border text-xl w-full my-2 text-dark font-bold bg-greenLight border-dark;
   }
 
   .card {

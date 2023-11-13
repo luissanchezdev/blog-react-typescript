@@ -1,4 +1,5 @@
-import React from 'react'
+import { Sub } from "../constants/types"
+
 // NOTA IMPORTANTE: Evitar tipar todo, usar la inferen de tipos de TS
 // Desde está interface también se puede aceptar children
 interface Props {
@@ -6,12 +7,7 @@ interface Props {
     //children: JSX.Element | JSX.Element[]
     //children?: () => JSX.Element | JSX.Element[]
     //Se puede hacer de muchas formas
-    subs: Array<{
-        nick: string
-        subMonths: number
-        avatar: string
-        description?: string
-    }>
+    subs: Array<Sub>
 }
 
 // La ventaja de realizarlo de esta forma es que podemos acceder a otras propiedades, tales como children. Al indicar que es del tipo React.FunctionComponent ya me esta permitiendo ha acceder a children
@@ -28,11 +24,11 @@ function ListSubs( { subs } : Props ) {
   const renderList = () : JSX.Element[] => {
      return subs.map(sub => {
 
-        return  (<li key={ crypto.randomUUID()} className='flex-center flex-col card'>
-              <img src={ sub.avatar } alt={ sub.nick } className='object-fit object-cover h-72 rounded-md w-fulll'/>
-              <div className='flex flex-col justify-center py-6'>
-              <h2 className='text-2xl capitalize space-y-2 font-bold'>{ sub.nick } <span className='text-greenLight'>({ sub.subMonths })</span></h2>
-              <p className='text-white'>{ sub.description?.substring(1,100) }</p>
+        return  (<li key={ crypto.randomUUID()} className='flex-center flex-col card w-full'>
+              <img src={ sub.avatar } alt={ sub.nick } className='object-fit object-cover h-72 w-full rounded-md'/>
+              <div className='flex flex-col flex-wrap justify-center py-6 px-2 w-full'>
+                <h2 className='text-2xl capitalize space-y-2 font-bold text-center'>{ sub.nick } <span className='text-greenLight'>({ sub.subMonths })</span></h2>
+                <p className='text-white md:h-5 truncate'>{ sub.description?.substring(1,100) }</p>
               </div>
           </li>)
 
@@ -40,7 +36,7 @@ function ListSubs( { subs } : Props ) {
   }
 
   return (
-    <ul className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5'>
+    <ul className='flex flex-col md:flex-row justify-center items-center gap-2 p-5'>
         { renderList() }
         {/* { subs.map(sub => {
         return (

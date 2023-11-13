@@ -1,37 +1,15 @@
 import { useEffect, useState } from 'react';
+import { ListSubs, Form } from './components';
 import './index.css'
-import ListSubs from './components/ListSubs';
+import { INITIAL_STATE } from './constants';
+import { Sub } from './constants/types';
+
+// Es buena idea centralizar el tipo de los estados, ya que  estos suelen ser más complejos
+interface AppState {
+  subs: Sub[]
+}
 
 function App() {
-
-  // Es buena idea centralizar el tipo de los estados, ya que  estos suelen ser más complejos
-  interface AppState {
-    subs: Sub[]
-  }
-
-  interface Sub {
-    nick: string
-    subMonths: number
-    avatar: string
-    description?: string
-  }
-
-
-  const INITIAL_STATE = [
-    {
-      nick: 'sebas',
-      subMonths: 3,
-      avatar: 'https://i.pravatar.cc/150?u=sebas',
-      description: 'sebas hace de moderador'
-    },
-    {
-      nick: 'cristina',
-      subMonths: 2,
-      avatar: 'https://i.pravatar.cc/150?u=cristina'
-    }
-  ]
-
-
   const [ subs, setSubs ] = useState<AppState['subs']>([])
 
   useEffect(() => {
@@ -39,13 +17,14 @@ function App() {
   },[])
   
   return (
-    <div className="App bg-hero min-h-screen">
+    <div className="App bg-hero min-h-screen font-spaceGrotesk">
       <header className='bg-gray-800 text-gray-100 py-10 flex-center'>
         <h1 className='text-4xl font-bold text-center text-greenLight uppercase' >Luissdev subs</h1>
       </header>
 
       <main className='container mx-auto py-5'>
         <ListSubs subs={ subs } />
+        <Form onNewSub={ setSubs }/>
       </main>
       <footer className='flex-center flex-col py-3 footer'>
         <p className='text-center text-greenLight'>Todos los derechos reservados</p>
