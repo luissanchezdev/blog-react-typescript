@@ -29,7 +29,7 @@ function App() {
   return (
     <div className="App bg-purpleLight min-h-screen font-spaceGrotesk" ref={ divRef }>
       <div className='transparent h-10'></div>
-      <header className='p-5 flex-center border-gray-800 border-2 bg-white rounded-xl mx-5'>
+      <header className='container p-5 flex-center border-gray-800 border-2 bg-white rounded-xl mx-auto'>
         <h1 className='text-4xl font-bold text-center text-gray-800 uppercase' >Luissdev subs</h1>
       </header>
 

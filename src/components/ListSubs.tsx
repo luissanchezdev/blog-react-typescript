@@ -25,7 +25,7 @@ function ListSubs( { subs } : Props ) {
      return subs.map(sub => {
 
         return  (
-          <li key={ crypto.randomUUID()} className='flex flex-col justify-cente align-center w-3/4 mx-auto bg-white m-2 rounded-xl'>
+          <li key={ crypto.randomUUID()} className='flex flex-col justify-cente align-center w-4/5 mx-auto bg-white m-2 rounded-xl'>
             <div className="w-full">
               <img src={ sub.avatar } alt={ sub.nick } className='object-fit object-cover h-72 rounded-md mx-auto w-full'/>
             </div>
