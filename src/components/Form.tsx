@@ -44,10 +44,10 @@ function Form({ onNewSub } : FormProps) {
 
   return (
     <>
-      <form onSubmit={ handleSubmit } className="md:max-w-md mx-auto">
-        <input onChange={ handleChange } value={ inputValues.nick } className="input" type='text' name='nick' placeholder='nick' />
-        <input onChange={ handleChange } value={ inputValues.subMonths } className="input" type='text' name='subMonths' placeholder='subMonths' />
-        <input onChange={ handleChange } value={ inputValues.avatar } className="input" type='text' name='avatar' placeholder='avatar' />
+      <form onSubmit={ handleSubmit } className="md:max-w-md mx-auto px-5 md:px-0">
+        <input onChange={ handleChange } value={ inputValues.nick } className="input focus:border-gray-500 focus:border-2" type='text' name='nick' placeholder='nick' />
+        <input onChange={ handleChange } value={ inputValues.subMonths } className="input focus:border-gray-500 focus:border-2" type='text' name='subMonths' placeholder='subMonths' />
+        <input onChange={ handleChange } value={ inputValues.avatar } className="input focus:border-gray-500 focus:border-2" type='text' name='avatar' placeholder='avatar' />
         <textarea onChange={ handleChange } value={ inputValues.description } className="input" name='description' placeholder='description' />
         <button type="submit" className="btn">Save new sub!</button>
         <button type="button" onClick={ handleClearForm } className="btn">Clear</button>

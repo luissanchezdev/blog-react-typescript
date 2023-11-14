@@ -24,19 +24,21 @@ function ListSubs( { subs } : Props ) {
   const renderList = () : JSX.Element[] => {
      return subs.map(sub => {
 
-        return  (<li key={ crypto.randomUUID()} className='flex-center flex-col card w-full'>
-              <img src={ sub.avatar } alt={ sub.nick } className='object-fit object-cover h-72 w-full rounded-md'/>
-              <div className='flex flex-col flex-wrap justify-center py-6 px-2 w-full'>
-                <h2 className='text-2xl capitalize space-y-2 font-bold text-center'>{ sub.nick } <span className='text-greenLight'>({ sub.subMonths })</span></h2>
-                <p className='text-white md:h-5 truncate'>{ sub.description?.substring(1,100) }</p>
-              </div>
+        return  (
+          <li key={ crypto.randomUUID()} className='flex flex-col justify-cente align-center w-3/4 mx-auto bg-white m-2 rounded-xl'>
+            <div className="w-full">
+              <img src={ sub.avatar } alt={ sub.nick } className='object-fit object-cover h-72 rounded-md mx-auto w-full'/>
+            </div>
+            <div className='flex flex-col justify-center py-6 px-2 w-full'>
+              <h2 className='text-2xl capitalize space-y-2 font-bold text-center'>{ sub.nick } <span className='text-gray-800'>({ sub.subMonths })</span></h2>
+              <p className='text-gray-600 md:h-5 truncate'>{ sub.description?.substring(1,100) }</p>
+            </div>
           </li>)
-
       })
   }
 
   return (
-    <ul className='flex flex-col md:flex-row justify-center items-center gap-2 p-5'>
+    <ul className='grid md:grid-cols-3 mx-auto my-5'>
         { renderList() }
         {/* { subs.map(sub => {
         return (

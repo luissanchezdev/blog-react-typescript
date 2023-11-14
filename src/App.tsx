@@ -27,12 +27,13 @@ function App() {
   }
   
   return (
-    <div className="App bg-hero min-h-screen font-spaceGrotesk" ref={ divRef }>
-      <header className='bg-gray-800 text-gray-100 py-10 flex-center'>
-        <h1 className='text-4xl font-bold text-center text-greenLight uppercase' >Luissdev subs</h1>
+    <div className="App bg-purpleLight min-h-screen font-spaceGrotesk" ref={ divRef }>
+      <div className='transparent h-10'></div>
+      <header className='p-5 flex-center border-gray-800 border-2 bg-white rounded-xl mx-5'>
+        <h1 className='text-4xl font-bold text-center text-gray-800 uppercase' >Luissdev subs</h1>
       </header>
 
-      <main className='container mx-auto py-5'>
+      <main className='container flex flex-col justify-center items-center py-5 mx-auto'>
         <ListSubs subs={ subs } />
         {/* Evitar pasar directamente el set del state
         <Form onNewSub={ setSubs }/>
@@ -43,8 +44,8 @@ function App() {
 
       </main>
       <footer className='flex-center flex-col py-3 footer'>
-        <p className='text-center text-greenLight'>Todos los derechos reservados</p>
-        <p className='text-greenLight'>{ new Date().getFullYear() }</p>
+        <small className='text-center text-gray-600'>Todos los derechos reservados</small>
+        <small className='text-gray-600'>{ new Date().getFullYear() }</small>
       </footer>
     </div>
   );

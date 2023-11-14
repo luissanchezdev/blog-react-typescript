@@ -28,6 +28,8 @@ module.exports = {
         'grayLight': '#C5C6C7',
         'greenLight': '#66FCF1',
         'greenDark': '#45A29E',
+        'purpleLight': '#f0e7f8',
+        'yellowLight': '#ffdd68'
       },
       backgroundImage: {
         'hero': url('./src/assets/images/hero.svg')

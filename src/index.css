@@ -22,11 +22,11 @@
   }
 
   .btn {
-    @apply p-2 rounded-md border text-xl w-full my-2 text-dark font-bold bg-greenLight border-dark;
+    @apply p-2 rounded-md border-2 hover:border-8 border-black md:text-xl w-full my-2 text-gray-800 font-bold bg-yellowLight hover:border-gray-200 hover:transition-all hover:duration-500 hover:transform hover:bg-greenLight;
   }
 
   .card {
-    @apply border-greenLight rounded-md shadow-md bg-gray-900 text-gray-50 my-4;
+    @apply border-greenLight rounded-md shadow-md bg-white text-gray-800 my-4;
   }
 
   .card-img {
@@ -34,7 +34,7 @@
   }
 
   .footer{
-    @apply bg-gray-800 text-gray-50;
+    @apply bg-white text-gray-600;
   }
 }
 
